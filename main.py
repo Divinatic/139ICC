@@ -59,7 +59,7 @@ async def eventlist(event: hikari.GuildMessageCreateEvent):
     Message Content
     ```{event.message.content}```'''
     , color = ec)
-    if event.message.author.id == 1200705803380854905:
+    if event.message.author.id == 1234471596056510484:
       return
     else:
       await bot.rest.create_message(1234407443472318594, msg.set_image('''https://cdn.discordapp.com/attachments/1234152282451476550/1234399732382826576/92a23e6ac048f2849f10f530d20a91f0.jpg?ex=663097d6&is=662f4656&hm=254d15b05a6a70e611f8f306729c4d802ca3fff4064596ec6026653e5da7d6a9&'''))
