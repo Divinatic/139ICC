@@ -1,10 +1,6 @@
 import hikari
 import lightbulb
-import datetime
-from datetime import datetime
-from datetime import *
-import platform
-from re import match
+
 
 bot = lightbulb.BotApp(
 token="MTIwMDcwNTgwMzM4MDg1NDkwNQ.GiNs3h.Z4Gs8LB-A1mw0kj6CqoKUfvuCGko9N4DfFrhxE",
