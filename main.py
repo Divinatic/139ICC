@@ -25,6 +25,7 @@ async def on_member_leave(event: hikari.MemberDeleteEvent):
   channel = 1234482759054131243
   leavetext = '''https://cdn.discordapp.com/attachments/1234152282451476550/1234483247946268713/GoodBye_20240429_142143_0000.png?ex=6630e59d&is=662f941d&hm=aea33447f4f030df02f78abdc71100ee325206d510d0382807c51dece56d57e9&'''
   await bot.rest.create_message(channel, leavetext)
+  await bot.rest.create_message(channel, f"<@{event.user.id}>")
 
 @bot.listen(hikari.MemberCreateEvent)
 async def on_member_join(event: hikari.MemberCreateEvent):
