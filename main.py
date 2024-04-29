@@ -1,8 +1,9 @@
 import hikari
 import lightbulb
 from keep_alive import keep_alive
+import os
 
-tokeninp = input("What is your token? ")
+tokeninp = os.environ.get("TOKEN")
 bot = lightbulb.BotApp(
 token=tokeninp,
   prefix="+",
