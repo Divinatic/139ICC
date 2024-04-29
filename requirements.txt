@@ -1,3 +1,2 @@
 hikari
 hikari-lightbulb
-platform
