@@ -2,6 +2,9 @@ import hikari
 import lightbulb
 from keep_alive import keep_alive
 import os
+import datetime
+from datetime import *
+
 
 tokeninp = os.environ.get("TOKEN")
 bot = lightbulb.BotApp(
