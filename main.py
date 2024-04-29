@@ -2,8 +2,9 @@ import hikari
 import lightbulb
 from keep_alive import keep_alive
 
+tokeninp = input("What is your token? ")
 bot = lightbulb.BotApp(
-token="MTIwMDcwNTgwMzM4MDg1NDkwNQ.GiNs3h.Z4Gs8LB-A1mw0kj6CqoKUfvuCGko9N4DfFrhxE",
+token=tokeninp,
   prefix="+",
   intents=(hikari.Intents.ALL_UNPRIVILEGED | hikari.Intents.GUILD_MEMBERS
            | hikari.Intents.MESSAGE_CONTENT),
