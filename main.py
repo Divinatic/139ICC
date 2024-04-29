@@ -1,6 +1,6 @@
 import hikari
 import lightbulb
-
+from keep_alive import keep_alive
 
 bot = lightbulb.BotApp(
 token="MTIwMDcwNTgwMzM4MDg1NDkwNQ.GiNs3h.Z4Gs8LB-A1mw0kj6CqoKUfvuCGko9N4DfFrhxE",
@@ -536,3 +536,5 @@ bot.run(
         type=hikari.ActivityType.LISTENING,
     ),
 )
+
+keep_alive()
