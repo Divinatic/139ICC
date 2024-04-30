@@ -44,9 +44,6 @@ async def on_member_leave(event: hikari.MemberDeleteEvent):
 @bot.listen(hikari.MemberCreateEvent)
 async def on_member_join(event: hikari.MemberCreateEvent):
   channel = 1234152271558737930
-  guild = event.bot.cache.get_guild(
-    event.guild_id) or await event.bot.rest.fetch_guild(event.guild_id)
-  members = len(guild.get_members().keys())
   welcometext = f'''♡ 𝐇𝐞𝐲 𝐭𝐡𝐞𝐫𝐞 <@{event.user.id}>!!
 
   ๑‧˚₊꒷꒦︶︶︶ **INFO**  🍰
@@ -55,7 +52,7 @@ async def on_member_join(event: hikari.MemberCreateEvent):
   ⌇ 🌙 ⌇ 𝘳𝘦𝘮𝘦𝘮𝘣𝘦𝘳 𝘵𝘰 𝘳𝘦𝘢𝘥  : <#1234152275090477106>
   ⌇  ⌇ 𝘤𝘩𝘢𝘵 𝘪𝘯 : <#1234152282451476550>
 
-    ✦ ₊꒷꒦ෆ꒷꒥꒷ ‧₊˚ 𝐡𝐚𝐯𝐞 𝐟𝐮𝐧! we now have {members} members!'''
+    ✦ ₊꒷꒦ෆ꒷꒥꒷ ‧₊˚ 𝐡𝐚𝐯𝐞 𝐟𝐮𝐧!'''
   embed = hikari.Embed(title="    ", description=welcometext, color=ec)
   await bot.rest.create_message(channel, embed.set_image('''https://cdn.discordapp.com/attachments/1233703141145313360/1234422515858673755/R.png?ex=6630ad0e&is=662f5b8e&hm=97c6f534c4a333328947a78a3225eb514bdee4b7c41847880436d6e3134da278&'''))
   await bot.rest.create_message(channel, f"<@{event.user.id}>")
