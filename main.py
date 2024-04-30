@@ -44,6 +44,9 @@ async def on_member_leave(event: hikari.MemberDeleteEvent):
 @bot.listen(hikari.MemberCreateEvent)
 async def on_member_join(event: hikari.MemberCreateEvent):
   channel = 1234152271558737930
+  guild = event.bot.cache.get_guild(
+    event.guild_id) or await event.bot.rest.fetch_guild(event.guild_id)
+  members = len(guild.get_members().keys())
   welcometext = f'''♡ 𝐇𝐞𝐲 𝐭𝐡𝐞𝐫𝐞 <@{event.user.id}>!!
 
   ๑‧˚₊꒷꒦︶︶︶ **INFO**  🍰
