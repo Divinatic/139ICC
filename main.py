@@ -1,9 +1,23 @@
 import hikari
 import lightbulb
-from keep_alive import keep_alive
 import os
 import datetime
 from datetime import *
+from flask import Flask
+from threading import Thread
+
+app = Flask('')
+
+@app.route('/')
+def main():
+  return "Your Bot Is Ready"
+
+def run():
+  app.run(host="0.0.0.0", port=8000)
+
+def keep_alive():
+  server = Thread(target=run)
+  server.start()
 
 
 tokeninp = os.environ.get("TOKEN")
@@ -542,7 +556,7 @@ async def dictionary(ctx: lightbulb.Context, word) -> None:
         #--Send error message if command fails, as it's assumed a definition isn't found--#
         await ctx.respond(content=":x: Sorry, I couldn't find that word. Check your spelling and try again.")
 
-
+keep_alive()
 bot.run(
     status=hikari.Status.DO_NOT_DISTURB,
     activity=hikari.Activity(
