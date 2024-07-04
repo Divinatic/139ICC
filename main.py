@@ -21,6 +21,14 @@ def keep_alive():
 
 
 tokeninp = os.environ.get("TOKEN")
+import hikari
+import lightbulb
+import datetime
+from datetime import datetime
+from datetime import *
+import platform
+from re import match
+
 bot = lightbulb.BotApp(
 token=tokeninp,
   prefix="+",
@@ -32,29 +40,12 @@ ec = 0x2f3136
 
 
 # LOGS SECTION
-
-
-@bot.listen(hikari.MemberDeleteEvent)
-async def on_member_leave(event: hikari.MemberDeleteEvent):
-  channel = 1234482759054131243
-  leavetext = '''https://cdn.discordapp.com/attachments/1234152282451476550/1234483247946268713/GoodBye_20240429_142143_0000.png?ex=6630e59d&is=662f941d&hm=aea33447f4f030df02f78abdc71100ee325206d510d0382807c51dece56d57e9&'''
-  await bot.rest.create_message(channel, leavetext)
-  await bot.rest.create_message(channel, f"<@{event.user.id}>")
-
 @bot.listen(hikari.MemberCreateEvent)
 async def on_member_join(event: hikari.MemberCreateEvent):
-  channel = 1234152271558737930
-  welcometext = f'''♡ 𝐇𝐞𝐲 𝐭𝐡𝐞𝐫𝐞 <@{event.user.id}>!!
-
-  ๑‧˚₊꒷꒦︶︶︶ **INFO**  🍰
-
-  ⌇ 🪷 ⌇ 𝘨𝘦𝘵 𝘺𝘰𝘶𝘳 𝘳𝘰𝘭𝘦𝘴 𝘪𝘯 : <#1234152279259746426>
-  ⌇ 🌙 ⌇ 𝘳𝘦𝘮𝘦𝘮𝘣𝘦𝘳 𝘵𝘰 𝘳𝘦𝘢𝘥  : <#1234152275090477106>
-  ⌇  ⌇ 𝘤𝘩𝘢𝘵 𝘪𝘯 : <#1234152282451476550>
-
-    ✦ ₊꒷꒦ෆ꒷꒥꒷ ‧₊˚ 𝐡𝐚𝐯𝐞 𝐟𝐮𝐧!'''
-  embed = hikari.Embed(title="    ", description=welcometext, color=ec)
-  await bot.rest.create_message(channel, embed.set_image('''https://cdn.discordapp.com/attachments/1233703141145313360/1234422515858673755/R.png?ex=6630ad0e&is=662f5b8e&hm=97c6f534c4a333328947a78a3225eb514bdee4b7c41847880436d6e3134da278&'''))
+  channel = 1257953871167488111
+  welcometext = f'''welcome cuh just have a good time'''
+  embed = hikari.Embed(title="    ", description=welcometext, color=ec) 
+  await bot.rest.create_message(channel, embed)
   await bot.rest.create_message(channel, f"<@{event.user.id}>")
 
 
@@ -73,10 +64,10 @@ async def eventlist(event: hikari.GuildMessageCreateEvent):
     Message Content
     ```{event.message.content}```'''
     , color = ec)
-    if event.message.author.id == 1234471596056510484:
+    if event.message.author.id == 1200705803380854905:
       return
     else:
-      await bot.rest.create_message(1234407443472318594, msg.set_image('''https://cdn.discordapp.com/attachments/1234152282451476550/1234399732382826576/92a23e6ac048f2849f10f530d20a91f0.jpg?ex=663097d6&is=662f4656&hm=254d15b05a6a70e611f8f306729c4d802ca3fff4064596ec6026653e5da7d6a9&'''))
+      await bot.rest.create_message(1234407443472318594, msg)
 
 
 
@@ -86,7 +77,7 @@ async def eventlist(event: hikari.GuildMessageCreateEvent):
 @lightbulb.command("test", "Run Test")
 @lightbulb.implements(lightbulb.PrefixCommand, lightbulb.SlashCommand)
 async def test(ctx):
-    embed = hikari.Embed(title = "**TEST**", description=f'''
+    embed = hikari.Embed(title = "**TEST**", description=f''' 
 
 ```   T E S T I N G   ```''', color =  0x2f3136)
     await ctx.respond(embed)
@@ -211,11 +202,11 @@ async def  member_info(ctx: lightbulb.Context, target: hikari.Member) -> None:
         inline=False,
     )
     emb.add_field(
-        "Mention",
-        user.mention,
+        "Mention", 
+        user.mention, 
         inline=False
     )
-
+    
     await ctx.respond(emb.set_image(banner))
 
 @bot.command
@@ -241,7 +232,7 @@ async def law(ctx):
 
  ` 8A `  Gore and any form of Pornography or anything depicting Pornography will be prohibited.
 
- ` 9A `  Nazism and Extremism is prohibited.
+ ` 9A `  Nazism and Extremism is prohibited. 
 
  ` 10A ` Posting unrelated media or gifs is prohibited.
 
@@ -556,7 +547,7 @@ async def dictionary(ctx: lightbulb.Context, word) -> None:
         #--Send error message if command fails, as it's assumed a definition isn't found--#
         await ctx.respond(content=":x: Sorry, I couldn't find that word. Check your spelling and try again.")
 
-keep_alive()
+
 bot.run(
     status=hikari.Status.DO_NOT_DISTURB,
     activity=hikari.Activity(
@@ -564,5 +555,3 @@ bot.run(
         type=hikari.ActivityType.LISTENING,
     ),
 )
-
-keep_alive()
