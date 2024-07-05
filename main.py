@@ -6,8 +6,7 @@ from datetime import *
 from flask import Flask
 from threading import Thread
 from wiktionaryparser import WiktionaryParser
-parser = WiktionaryParser()
-app = Flask('')
+
 
 @app.route('/')
 def main():
