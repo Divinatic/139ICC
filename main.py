@@ -555,3 +555,4 @@ bot.run(
         type=hikari.ActivityType.LISTENING,
     ),
 )
+keep_alive()
