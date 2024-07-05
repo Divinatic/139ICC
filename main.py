@@ -12,7 +12,7 @@ def main():
   return "Your Bot Is Ready"
 
 def run():
-  app.run(host="0.0.0.0", port=8000)
+  app.run(host="0.0.0.0", port=os.environ.get("PORT"))
 
 def keep_alive():
   server = Thread(target=run)
@@ -546,7 +546,7 @@ async def dictionary(ctx: lightbulb.Context, word) -> None:
         #--Send error message if command fails, as it's assumed a definition isn't found--#
         await ctx.respond(content=":x: Sorry, I couldn't find that word. Check your spelling and try again.")
 
-
+keep_alive()
 bot.run(
     status=hikari.Status.DO_NOT_DISTURB,
     activity=hikari.Activity(
@@ -554,4 +554,3 @@ bot.run(
         type=hikari.ActivityType.LISTENING,
     ),
 )
-keep_alive()
