@@ -63,7 +63,7 @@ async def eventlist(event: hikari.GuildMessageCreateEvent):
     Message Content
     ```{event.message.content}```'''
     , color = ec)
-    if event.message.author.id == 1200705803380854905:
+    if event.message.author.id == 1234471596056510484:
       return
     else:
       await bot.rest.create_message(1258705649399889920, msg)
