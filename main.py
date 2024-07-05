@@ -5,7 +5,8 @@ import datetime
 from datetime import *
 from flask import Flask
 from threading import Thread
-
+from wiktionaryparser import WiktionaryParser
+parser = WiktionaryParser()
 app = Flask('')
 
 @app.route('/')
@@ -67,7 +68,7 @@ async def eventlist(event: hikari.GuildMessageCreateEvent):
     if event.message.author.id == 1200705803380854905:
       return
     else:
-      await bot.rest.create_message(1234407443472318594, msg)
+      await bot.rest.create_message(1258705649399889920, msg)
 
 
 
